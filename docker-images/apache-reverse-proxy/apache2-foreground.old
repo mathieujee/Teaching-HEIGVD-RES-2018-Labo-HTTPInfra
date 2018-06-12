@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+# Add setup for RES lab
+echo "Setup for the RES lab..."
+echo "Static App URL: $STATIC_APP"
+echo "Dynamic app URL: $DYNAMIC_APP"
+
+rm -f /var/run/apache2/apache2.pid
+
+exec apache2 -DFOREGROUND
